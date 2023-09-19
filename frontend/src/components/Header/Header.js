@@ -7,12 +7,17 @@ import {
   Navbar,
   NavDropdown,
 } from "react-bootstrap";
-
+import "./Header.css";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Container>
-        <Navbar.Brand href="/">Note Watcher</Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/" className="links">
+            Note Watcher
+          </Link>
+        </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -28,7 +33,11 @@ const Header = () => {
           </Nav>
           <Nav>
             <>
-              <Nav.Link href="/mynotes">My Notes</Nav.Link>
+              <Nav.Link>
+                <Link className="links" to="/mynotes">
+                  My Notes
+                </Link>
+              </Nav.Link>
               <NavDropdown title={`Sagar Jadhav`} id="collasible-nav-dropdown">
                 <NavDropdown.Item href="/profile">
                   {/* <img
